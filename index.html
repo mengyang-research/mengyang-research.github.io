@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mengyang Li | 李蒙阳</title>
+<meta name="description" content="Mengyang Li - Lecturer at Tianjin Normal University, research on data optimization, preference optimization, embodied intelligence.">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0e1a;
+  --bg2: #0f1527;
+  --bg3: #141b30;
+  --surface: #1a2340;
+  --surface2: #1e2847;
+  --border: rgba(100,130,200,0.15);
+  --accent: #4f8ef7;
+  --accent2: #7c3aed;
+  --accent3: #06b6d4;
+  --text: #e8edf8;
+  --text2: #9ba8c5;
+  --text3: #6b7a9e;
+  --tag-a: #1e3a5f;
+  --tag-b: #2d1b4e;
+  --tag-c: #0f2d35;
+  --green: #10b981;
+  --yellow: #f59e0b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body.zh { font-family: 'Noto Sans SC', 'Inter', sans-serif; }
+
+/* ── Canvas background ── */
+#bg-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Nav ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 60px;
+  background: rgba(10,14,26,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, var(--accent), var(--accent3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text2);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+.lang-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text2);
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.lang-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Sections ── */
+section {
+  position: relative;
+  z-index: 1;
+  padding: 6rem 2rem 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section:first-of-type { padding-top: 8rem; }
+
+/* ── Hero ── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(79,142,247,0.1);
+  border: 1px solid rgba(79,142,247,0.25);
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-tag::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+.hero-name {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+}
+
+.hero-name-cn {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 300;
+  color: var(--text2);
+  letter-spacing: 0.15em;
+  margin-bottom: 1.2rem;
+}
+
+.hero-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--accent3);
+  margin-bottom: 0.4rem;
+}
+
+.hero-affil {
+  font-size: 0.92rem;
+  color: var(--text2);
+  margin-bottom: 1.8rem;
+}
+
+.hero-bio {
+  font-size: 0.95rem;
+  color: var(--text2);
+  line-height: 1.8;
+  max-width: 560px;
+  margin-bottom: 2rem;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1.3rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), #3b75e0);
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(79,142,247,0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text2);
+  border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Avatar card */
+.avatar-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-ring {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1.5rem;
+}
+
+.avatar-ring::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--accent), var(--accent2), var(--accent3), var(--accent));
+  animation: spin 8s linear infinite;
+  z-index: 0;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.avatar-ring img {
+  position: relative;
+  z-index: 1;
+  width: 194px;
+  height: 194px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--bg);
+  display: block;
+  margin: 3px;
+}
+
+.avatar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.avatar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.82rem;
+  color: var(--text2);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.avatar-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--surface2);
+  transform: translateX(4px);
+}
+
+.avatar-link svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+/* ── Section heading ── */
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.section-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── Research interests ── */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.interest-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.4rem 1.3rem;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.interest-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent3));
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.interest-card:hover {
+  border-color: rgba(79,142,247,0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.interest-card:hover::before { transform: scaleX(1); }
+
+.interest-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+
+.interest-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+
+.interest-desc {
+  font-size: 0.8rem;
+  color: var(--text3);
+  line-height: 1.6;
+}
+
+/* ── Publications ── */
+.pub-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.8rem;
+}
+
+.filter-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text3);
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.pub-list { display: flex; flex-direction: column; gap: 1rem; }
+
+.pub-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.3rem 1.5rem;
+  transition: all 0.25s;
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+.pub-item:hover {
+  border-color: rgba(79,142,247,0.35);
+  transform: translateX(4px);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+}
+
+.pub-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text3);
+  min-width: 28px;
+  padding-top: 3px;
+}
+
+.pub-content { flex: 1; }
+
+.pub-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+  line-height: 1.5;
+}
+
+.pub-authors {
+  font-size: 0.82rem;
+  color: var(--text3);
+  margin-bottom: 0.5rem;
+}
+
+.pub-authors strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.pub-venue {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.venue-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.venue-ccfa {
+  background: rgba(79,142,247,0.15);
+  color: var(--accent);
+  border: 1px solid rgba(79,142,247,0.3);
+}
+
+.venue-ccfb {
+  background: rgba(6,182,212,0.15);
+  color: var(--accent3);
+  border: 1px solid rgba(6,182,212,0.3);
+}
+
+.venue-q1 {
+  background: rgba(16,185,129,0.12);
+  color: var(--green);
+  border: 1px solid rgba(16,185,129,0.3);
+}
+
+.venue-highlight {
+  background: rgba(245,158,11,0.12);
+  color: var(--yellow);
+  border: 1px solid rgba(245,158,11,0.3);
+}
+
+.venue-year {
+  font-size: 0.75rem;
+  color: var(--text3);
+}
+
+.pub-item[data-hidden="true"] { display: none; }
+
+/* ── Experience ── */
+.timeline { position: relative; padding-left: 1.5rem; }
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px; bottom: 8px;
+  width: 1px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 2rem 1.5rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -4px; top: 8px;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 8px rgba(79,142,247,0.6);
+}
+
+.timeline-period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.05em;
+}
+
+.timeline-role {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.timeline-org {
+  font-size: 0.88rem;
+  color: var(--text2);
+}
+
+/* ── Patents ── */
+.patent-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.patent-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.88rem;
+  transition: all 0.2s;
+}
+
+.patent-item:hover {
+  border-color: rgba(79,142,247,0.3);
+  transform: translateX(4px);
+}
+
+.patent-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.patent-text { color: var(--text2); line-height: 1.5; }
+
+.patent-type {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+.patent-granted {
+  background: rgba(16,185,129,0.12);
+  color: var(--green);
+  border: 1px solid rgba(16,185,129,0.3);
+}
+
+.patent-pending {
+  background: rgba(245,158,11,0.1);
+  color: var(--yellow);
+  border: 1px solid rgba(245,158,11,0.25);
+}
+
+/* ── Recruit ── */
+.recruit-card {
+  background: linear-gradient(135deg, rgba(79,142,247,0.08), rgba(124,58,237,0.08));
+  border: 1px solid rgba(79,142,247,0.25);
+  border-radius: 16px;
+  padding: 2rem 2.2rem;
+}
+
+.recruit-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.recruit-card p {
+  font-size: 0.9rem;
+  color: var(--text2);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.recruit-card a:not(.btn) {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.recruit-card a:not(.btn):hover { text-decoration: underline; }
+
+/* ── Contact ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.3rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: all 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.contact-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.ci-blue { background: rgba(79,142,247,0.15); }
+.ci-purple { background: rgba(124,58,237,0.15); }
+.ci-cyan { background: rgba(6,182,212,0.15); }
+.ci-green { background: rgba(16,185,129,0.15); }
+
+.contact-label {
+  font-size: 0.75rem;
+  color: var(--text3);
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contact-value {
+  font-size: 0.88rem;
+  color: var(--text2);
+  word-break: break-all;
+}
+
+/* ── Footer ── */
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--text3);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── i18n ── */
+[data-en], [data-zh] { display: inline; }
+body.en [data-zh] { display: none !important; }
+body.zh [data-en] { display: none !important; }
+.block-en, .block-zh { display: block; }
+body.en .block-zh { display: none !important; }
+body.zh .block-en { display: none !important; }
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .avatar-card {
+    order: -1;
+    align-items: center;
+  }
+  .avatar-ring { width: 140px; height: 140px; }
+  .avatar-ring img { width: 134px; height: 134px; margin: 3px; }
+  .nav-links { gap: 0.9rem; }
+  section { padding: 5rem 1.2rem 3rem; }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* selection */
+::selection { background: rgba(79,142,247,0.3); }
+</style>
+</head>
+<body class="en">
+
+<canvas id="bg-canvas"></canvas>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-logo">Mengyang Li</div>
+  <ul class="nav-links">
+    <li><a href="#about" data-en>About</a><a href="#about" data-zh>简介</a></li>
+    <li><a href="#research" data-en>Research</a><a href="#research" data-zh>研究</a></li>
+    <li><a href="#publications" data-en>Publications</a><a href="#publications" data-zh>论文</a></li>
+    <li><a href="#patents" data-en>Patents</a><a href="#patents" data-zh>专利</a></li>
+    <li><a href="#recruit" data-en>Recruit</a><a href="#recruit" data-zh>招生</a></li>
+    <li><a href="#contact" data-en>Contact</a><a href="#contact" data-zh>联系</a></li>
+    <li><button class="lang-btn" id="langToggle">中文</button></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ── -->
+<section id="about">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-tag">
+        <span data-en>Academic Profile</span>
+        <span data-zh>学术主页</span>
+      </div>
+      <h1 class="hero-name">Mengyang Li</h1>
+      <div class="hero-name-cn">李蒙阳</div>
+      <div class="hero-title">
+        <span data-en>Lecturer &amp; Master's Supervisor</span>
+        <span data-zh>讲师 · 硕士生导师</span>
+      </div>
+      <div class="hero-affil">
+        <span data-en>College of Electronic &amp; Communication Engineering, Tianjin Normal University</span>
+        <span data-zh>天津师范大学 · 电子与通信工程学院</span>
+      </div>
+      <p class="hero-bio block-en">
+        I received my Ph.D. from Tianjin University (2021–2024) under Prof. Ou Wu, focusing on deep learning and data mining. My current research spans <strong>data optimization</strong>, <strong>preference optimization</strong> (RLHF/DPO for LLMs), and <strong>embodied intelligence</strong>. I have published papers at top venues including KDD, ICML, CVPR, ACL, ICLR, AAAI, IEEE TIP, and TNNLS.
+      </p>
+      <p class="hero-bio block-zh">
+        博士毕业于天津大学（2021–2024），师从吴喆教授，研究方向为深度学习与数据挖掘。目前主要从事<strong>数据优化</strong>、<strong>偏好优化</strong>（面向大语言模型的RLHF/DPO）及<strong>具身智能</strong>研究。研究成果发表于KDD、ICML、CVPR、ACL、ICLR、AAAI、IEEE TIP、TNNLS等顶级期刊与会议。
+      </p>
+      <div class="hero-links">
+        <a href="mailto:limengyang@tjnu.edu.cn" class="btn btn-primary">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+          <span data-en>Email Me</span><span data-zh>发送邮件</span>
+        </a>
+        <a href="https://scholar.google.com.hk/citations?user=SJYlWVgAAAAJ&hl=zh-CN" target="_blank" class="btn btn-outline">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 11a8 8 0 017.162 2.44L24 9.5 12 0z"/></svg>
+          Google Scholar
+        </a>
+        <a href="https://github.com/mengyang-research" target="_blank" class="btn btn-outline">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          GitHub
+        </a>
+        <a href="https://orcid.org/0000-0002-8958-3163" target="_blank" class="btn btn-outline">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.9-1.303 3.9-3.722 0-2.297-1.397-3.722-3.781-3.722h-2.416z"/></svg>
+          ORCID
+        </a>
+      </div>
+    </div>
+
+    <div class="avatar-card">
+      <div class="avatar-ring">
+        <img src="/images/me.png" alt="Mengyang Li" onerror="this.src='/images/bio-photo.jpg'">
+      </div>
+      <div class="avatar-links">
+        <a href="mailto:limengyang@tjnu.edu.cn" class="avatar-link">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+          limengyang@tjnu.edu.cn
+        </a>
+        <div class="avatar-link">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+          <span data-en>Tianjin, China</span><span data-zh>中国·天津</span>
+        </div>
+        <div class="avatar-link">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/></svg>
+          <span data-en>Ph.D., Tianjin University</span><span data-zh>博士·天津大学</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Research ── -->
+<section id="research">
+  <div class="section-heading">
+    <span class="section-num">01</span>
+    <h2 class="section-title"><span data-en>Research Interests</span><span data-zh>研究方向</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="interests-grid">
+    <div class="interest-card">
+      <div class="interest-icon">⚡</div>
+      <div class="interest-name"><span data-en>Data Optimization</span><span data-zh>数据优化</span></div>
+      <div class="interest-desc block-en">Training dynamics, sample weighting, curriculum learning, and data valuation for deep neural networks.</div>
+      <div class="interest-desc block-zh">深度神经网络的训练动态、样本赋权、课程学习与数据估值。</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">🧠</div>
+      <div class="interest-name"><span data-en>Preference Optimization</span><span data-zh>偏好优化</span></div>
+      <div class="interest-desc block-en">RLHF, DPO and beyond — aligning large language models with human preferences efficiently and robustly.</div>
+      <div class="interest-desc block-zh">RLHF、DPO及大语言模型偏好对齐，提升对齐的效率与鲁棒性。</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">🤖</div>
+      <div class="interest-name"><span data-en>Embodied Intelligence</span><span data-zh>具身智能</span></div>
+      <div class="interest-desc block-en">Perception–action loops, world models, and multi-modal reasoning for physically grounded agents.</div>
+      <div class="interest-desc block-zh">感知-动作闭环、世界模型与多模态推理，面向物理环境中的智能体。</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">📊</div>
+      <div class="interest-name"><span data-en>Imbalanced Learning</span><span data-zh>不均衡学习</span></div>
+      <div class="interest-desc block-en">Label noise, class imbalance, and local differential privacy for robust machine learning at scale.</div>
+      <div class="interest-desc block-zh">标签噪声、类别不均衡与局部差分隐私，面向大规模鲁棒机器学习。</div>
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <div class="section-heading" style="margin-top:3rem;">
+    <span class="section-num">02</span>
+    <h2 class="section-title"><span data-en>Experience</span><span data-zh>主要经历</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-period">2025.02 — Present</div>
+      <div class="timeline-role"><span data-en>Lecturer &amp; Master's Supervisor</span><span data-zh>讲师 · 硕士生导师</span></div>
+      <div class="timeline-org"><span data-en>College of Electronic &amp; Communication Engineering, Tianjin Normal University</span><span data-zh>天津师范大学 · 电子与通信工程学院</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-period">2021.09 — 2024.11</div>
+      <div class="timeline-role"><span data-en>Ph.D. — Deep Learning &amp; Data Mining</span><span data-zh>博士 · 深度学习与数据挖掘</span></div>
+      <div class="timeline-org"><span data-en>Tianjin University, supervised by Prof. Ou Wu</span><span data-zh>天津大学，师从吴喆教授</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Publications ── -->
+<section id="publications">
+  <div class="section-heading">
+    <span class="section-num">03</span>
+    <h2 class="section-title"><span data-en>Publications</span><span data-zh>学术论文</span></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="pub-filters">
+    <button class="filter-btn active" data-filter="all"><span data-en>All</span><span data-zh>全部</span></button>
+    <button class="filter-btn" data-filter="dpo"><span data-en>Preference Opt.</span><span data-zh>偏好优化</span></button>
+    <button class="filter-btn" data-filter="data"><span data-en>Data Opt.</span><span data-zh>数据优化</span></button>
+    <button class="filter-btn" data-filter="imbalance"><span data-en>Imbalanced</span><span data-zh>不均衡</span></button>
+  </div>
+
+  <div class="pub-list">
+
+    <div class="pub-item" data-cat="dpo">
+      <div class="pub-num">[1]</div>
+      <div class="pub-content">
+        <div class="pub-title">Dual-Difficulty Curriculum Learning for Direct Preference Optimization</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Haozhan Geng, Zhong Zhang, Shuang Liu</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">KDD 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="dpo">
+      <div class="pub-num">[2]</div>
+      <div class="pub-content">
+        <div class="pub-title">Layer-wise Gradient Disentanglement: Decoupling Semantics and Preferences in Direct Preference Optimization</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Shuang Liu, Zhong Zhang</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">ICML 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="dpo">
+      <div class="pub-num">[3]</div>
+      <div class="pub-content">
+        <div class="pub-title">Task-Aware Preference Calibration for Direct Preference Optimization</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Zhong Zhang, Pinlong Zhao</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">ICML 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[4]</div>
+      <div class="pub-content">
+        <div class="pub-title">DABO: Difficulty-aware Bayesian Optimization with Diffusion-learned Priors</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Pinlong Zhao</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">CVPR 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+          <span class="venue-tag venue-highlight">Highlight</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="dpo">
+      <div class="pub-num">[5]</div>
+      <div class="pub-content">
+        <div class="pub-title">What Do LLMs Learn First? Asymmetric Learning Dynamics of Input Complexity and Output Ambiguity in Preference Alignment</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Jingwen Wang, Pinlong Zhao</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">ACL 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="dpo">
+      <div class="pub-num">[6]</div>
+      <div class="pub-content">
+        <div class="pub-title">Aligner, Diagnose Thyself: A Meta-learning Paradigm for Fusing Intrinsic Feedback in Preference Alignment</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Pinlong Zhao</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">ICLR 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[7]</div>
+      <div class="pub-content">
+        <div class="pub-title">Difficulty-Aware Learning Curve Extrapolation</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Pinlong Zhao</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">AAAI 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[8]</div>
+      <div class="pub-content">
+        <div class="pub-title">Delving into the Training Dynamics for Image Classification</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Xiaoling Zhou, Ou Wu</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">IEEE TIP 2025</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+          <span class="venue-tag venue-q1">CAS Q1 TOP · IF 13.7</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[9]</div>
+      <div class="pub-content">
+        <div class="pub-title">Toward Learnable and Interpretable Data Shapley Valuation for Deep Learning</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Weiyao Zhu, Ou Wu</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">KBS 2025</span>
+          <span class="venue-tag venue-q1">CAS Q1 TOP · IF 7.2</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[10]</div>
+      <div class="pub-content">
+        <div class="pub-title">Class-level Logit Perturbation</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Fengguang Su, Ou Wu, Ji Zhang</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfb">IEEE TNNLS 2024</span>
+          <span class="venue-tag venue-q1">CAS Q1 TOP · IF 8.9</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[11]</div>
+      <div class="pub-content">
+        <div class="pub-title">Logit Perturbation</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Fengguang Su, Ou Wu</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">AAAI 2022</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="dpo">
+      <div class="pub-num">[12]</div>
+      <div class="pub-content">
+        <div class="pub-title">Learning Temporally-Aware Sample Weights for Preference Optimization</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Xudong Zhou, Pinlong Zhao</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">ACL Findings 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="imbalance">
+      <div class="pub-num">[13]</div>
+      <div class="pub-content">
+        <div class="pub-title">ECOC-IL: Robust and Efficient Label LDP for Imbalanced Learning</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Ou Wu</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">CVPR Findings 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="dpo">
+      <div class="pub-num">[14]</div>
+      <div class="pub-content">
+        <div class="pub-title">What Tokens Truly Matter? The Logit Conflation Problem in LLM Sampling</div>
+        <div class="pub-authors">Pinlong Zhao, Huijun Tang, Pengfei Jiao, <strong>Mengyang Li</strong> <em>(corresponding)</em></div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">ACL Findings 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="imbalance">
+      <div class="pub-num">[15]</div>
+      <div class="pub-content">
+        <div class="pub-title">Revisiting the Effective Number Theory for Imbalanced Learning</div>
+        <div class="pub-authors">Ou Wu, <strong>Mengyang Li</strong></div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">IEEE TKDE 2024</span>
+          <span class="venue-tag venue-ccfa">CCF-A · IF 8.9</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="imbalance">
+      <div class="pub-num">[16]</div>
+      <div class="pub-content">
+        <div class="pub-title">Unequal Vulnerability: The Differential Impact of Label Flipping Attacks Across Classes</div>
+        <div class="pub-authors">Pinlong Zhao, <strong>Mengyang Li</strong>, Pengfei Jiao, Huijun Tang, Ou Wu</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">WWW 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[17]</div>
+      <div class="pub-content">
+        <div class="pub-title">Investigating the Sample Weighting Mechanism Using an Interpretable Weighting Framework</div>
+        <div class="pub-authors">Xiaolin Zhou, Ou Wu, <strong>Mengyang Li</strong></div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">IEEE TKDE 2023</span>
+          <span class="venue-tag venue-ccfa">CCF-A · IF 8.9</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[18]</div>
+      <div class="pub-content">
+        <div class="pub-title">Two-Level LSTM for Sentiment Analysis With Lexicon Embedding and Polar Flipping</div>
+        <div class="pub-authors">Ou Wu, Tao Yang, <strong>Mengyang Li</strong>, Ming Li</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-q1">IEEE Trans. Cybernetics 2022</span>
+          <span class="venue-tag venue-q1">CAS Q1 TOP · IF 11.8</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[19]</div>
+      <div class="pub-content">
+        <div class="pub-title">Investigating Annotation Noise for Named Entity Recognition</div>
+        <div class="pub-authors">Yu Zhu, Yingchun Ye, <strong>Mengyang Li</strong>, Ji Zhang, Ou Wu</div>
+        <div class="pub-venue">
+          <span class="venue-year">2023 · IF 6.0</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Patents ── -->
+<section id="patents">
+  <div class="section-heading">
+    <span class="section-num">04</span>
+    <h2 class="section-title"><span data-en>Patents</span><span data-zh>专利</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="patent-list">
+    <div class="patent-item">
+      <div class="patent-icon">📋</div>
+      <div class="patent-text">
+        <span data-en>A Method and Apparatus for Layout Parsing of Receipt-type Images</span>
+        <span data-zh>一种票据类图像版面解析方法及装置</span>
+        <span class="patent-type patent-granted"><span data-en>Granted</span><span data-zh>发明授权</span></span>
+      </div>
+    </div>
+    <div class="patent-item">
+      <div class="patent-icon">📋</div>
+      <div class="patent-text">
+        <span data-en>A Hard Sample Mining Method and Apparatus for Content Safety</span>
+        <span data-zh>一种面向内容安全的困难样本挖掘方法及装置</span>
+        <span class="patent-type patent-granted"><span data-en>Granted</span><span data-zh>发明授权</span></span>
+      </div>
+    </div>
+    <div class="patent-item">
+      <div class="patent-icon">📄</div>
+      <div class="patent-text">
+        <span data-en>An Interpretable Deep Learning Sample Weighting Method</span>
+        <span data-zh>一种可解释性的深度学习样本赋权方法</span>
+        <span class="patent-type patent-pending"><span data-en>Published</span><span data-zh>发明公开</span></span>
+      </div>
+    </div>
+    <div class="patent-item">
+      <div class="patent-icon">📄</div>
+      <div class="patent-text">
+        <span data-en>A Subject Information Extraction Method for Financial Statement Images</span>
+        <span data-zh>一种面向财务报表图像的科目信息提取方法</span>
+        <span class="patent-type patent-pending"><span data-en>Published</span><span data-zh>发明公开</span></span>
+      </div>
+    </div>
+    <div class="patent-item">
+      <div class="patent-icon">📄</div>
+      <div class="patent-text">
+        <span data-en>A Structured Information Extraction Method for Financial Statement Images</span>
+        <span data-zh>一种面向财务报表图像的结构化信息提取方法</span>
+        <span class="patent-type patent-pending"><span data-en>Published</span><span data-zh>发明公开</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Recruit ── -->
+<section id="recruit">
+  <div class="section-heading">
+    <span class="section-num">05</span>
+    <h2 class="section-title"><span data-en>Graduate Recruitment</span><span data-zh>研究生招生</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="recruit-card">
+    <h3><span data-en>🎓 Accepting Master's Students for 2026</span><span data-zh>🎓 2026级硕士研究生招生</span></h3>
+    <p class="block-en">
+      I am currently planning to recruit <strong>2 master's students</strong>. Research topics center on <strong>data optimization</strong>, <strong>large language models</strong>, and <strong>embodied intelligence</strong>.
+      <br><br>
+      I welcome applicants who are diligent and rigorous, with a solid mathematical foundation and programming skills (Python preferred). If interested, please contact me by email with the subject line: <strong>"Master Application + Name + Undergraduate School/Major"</strong>.
+    </p>
+    <p class="block-zh">
+      目前计划招收 <strong>2名硕士研究生</strong>，研究方向围绕<strong>数据优化</strong>、<strong>大语言模型</strong>、<strong>具身智能</strong>展开。
+      <br><br>
+      欢迎踏实认真、具备一定数学基础和编程能力（Python优先）的同学报考。有意者请发送邮件，邮件主题注明：<strong>"硕士报考+姓名+本科院校/专业"</strong>。
+    </p>
+    <a href="mailto:limengyang@tjnu.edu.cn" class="btn btn-primary" style="margin-top:0.5rem;">
+      <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+      limengyang@tjnu.edu.cn
+    </a>
+  </div>
+</section>
+
+<!-- ── Contact ── -->
+<section id="contact">
+  <div class="section-heading">
+    <span class="section-num">06</span>
+    <h2 class="section-title"><span data-en>Contact</span><span data-zh>联系方式</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="contact-grid">
+    <a href="mailto:limengyang@tjnu.edu.cn" class="contact-card">
+      <div class="contact-icon ci-blue">📧</div>
+      <div>
+        <div class="contact-label"><span data-en>Email</span><span data-zh>邮箱</span></div>
+        <div class="contact-value">limengyang@tjnu.edu.cn</div>
+      </div>
+    </a>
+    <div class="contact-card">
+      <div class="contact-icon ci-green">📍</div>
+      <div>
+        <div class="contact-label"><span data-en>Address</span><span data-zh>地址</span></div>
+        <div class="contact-value block-en">Room C424, Mingli Building, Tianjin Normal University, 393 Binshui West Rd, Xiqing, Tianjin</div>
+        <div class="contact-value block-zh">天津师范大学明理楼C区424，天津市西青区宾水西道393号</div>
+      </div>
+    </div>
+    <a href="https://scholar.google.com.hk/citations?user=SJYlWVgAAAAJ&hl=zh-CN" target="_blank" class="contact-card">
+      <div class="contact-icon ci-purple">🎓</div>
+      <div>
+        <div class="contact-label">Google Scholar</div>
+        <div class="contact-value">SJYlWVgAAAAJ</div>
+      </div>
+    </a>
+    <a href="https://orcid.org/0000-0002-8958-3163" target="_blank" class="contact-card">
+      <div class="contact-icon ci-cyan">🔬</div>
+      <div>
+        <div class="contact-label">ORCID</div>
+        <div class="contact-value">0000-0002-8958-3163</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <span data-en>© 2025 Mengyang Li · Tianjin Normal University · Built with ❤️ and curiosity</span>
+  <span data-zh>© 2025 李蒙阳 · 天津师范大学 · 用热爱与好奇心构建</span>
+</footer>
+
+<script>
+/* ── Animated background ── */
+(function() {
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, nodes, frame;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function Node() {
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    this.vx = (Math.random() - 0.5) * 0.4;
+    this.vy = (Math.random() - 0.5) * 0.4;
+    this.r = Math.random() * 2 + 0.5;
+  }
+
+  function init() {
+    resize();
+    nodes = Array.from({ length: 80 }, () => new Node());
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // Update
+    nodes.forEach(n => {
+      n.x += n.vx;
+      n.y += n.vy;
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
+    });
+
+    // Edges
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 140) {
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.strokeStyle = `rgba(79,142,247,${0.12 * (1 - d / 140)})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Nodes
+    nodes.forEach(n => {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(79,142,247,0.5)';
+      ctx.fill();
+    });
+
+    frame = requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', () => { resize(); });
+  init();
+  draw();
+})();
+
+/* ── Language toggle ── */
+const langBtn = document.getElementById('langToggle');
+let lang = 'en';
+
+langBtn.addEventListener('click', () => {
+  lang = lang === 'en' ? 'zh' : 'en';
+  document.body.className = lang;
+  langBtn.textContent = lang === 'en' ? '中文' : 'EN';
+});
+
+/* ── Publication filters ── */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.pub-item').forEach(item => {
+      item.dataset.hidden = (f !== 'all' && item.dataset.cat !== f) ? 'true' : 'false';
+    });
+  });
+});
+
+/* ── Smooth reveal on scroll ── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.pub-item, .interest-card, .timeline-item, .patent-item, .contact-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
