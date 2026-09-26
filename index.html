@@ -515,6 +515,13 @@ section:first-of-type { padding-top: 8rem; }
   border: 1px solid rgba(168,85,247,0.35);
 }
 
+/* Topic tag — Machine Unlearning */
+.venue-topic {
+  background: rgba(244,63,94,0.12);
+  color: #e11d48;
+  border: 1px solid rgba(244,63,94,0.3);
+}
+
 .venue-q1 {
   background: rgba(16,185,129,0.12);
   color: var(--green);
@@ -907,6 +914,7 @@ body.zh .block-en { display: none !important; }
 
   <div class="pub-filters">
     <button class="filter-btn active" data-filter="all"><span data-en>All</span><span data-zh>全部</span></button>
+    <button class="filter-btn" data-filter="unlearning"><span data-en>Unlearning</span><span data-zh>模型遗忘</span></button>
     <button class="filter-btn" data-filter="dpo"><span data-en>Preference Opt.</span><span data-zh>偏好优化</span></button>
     <button class="filter-btn" data-filter="data"><span data-en>Data Opt.</span><span data-zh>数据优化</span></button>
     <button class="filter-btn" data-filter="imbalance"><span data-en>Imbalanced</span><span data-zh>不均衡</span></button>
@@ -914,237 +922,8 @@ body.zh .block-en { display: none !important; }
 
   <div class="pub-list">
 
-    <div class="pub-item" data-cat="dpo">
+    <div class="pub-item pub-nips" data-cat="unlearning">
       <div class="pub-num">[1]</div>
-      <div class="pub-content">
-        <div class="pub-title">Dual-Difficulty Curriculum Learning for Direct Preference Optimization</div>
-        <div class="pub-authors"><strong>Mengyang Li</strong>, Haozhan Geng, Zhong Zhang, Shuang Liu</div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfa">KDD 2026</span>
-          <span class="venue-tag venue-ccfa">CCF-A</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="dpo">
-      <div class="pub-num">[2]</div>
-      <div class="pub-content">
-        <div class="pub-title">Layer-wise Gradient Disentanglement: Decoupling Semantics and Preferences in Direct Preference Optimization</div>
-        <div class="pub-authors"><strong>Mengyang Li</strong>, Shuang Liu, Zhong Zhang</div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfa">ICML 2026</span>
-          <span class="venue-tag venue-ccfa">CCF-A</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="dpo">
-      <div class="pub-num">[3]</div>
-      <div class="pub-content">
-        <div class="pub-title">Task-Aware Preference Calibration for Direct Preference Optimization</div>
-        <div class="pub-authors"><strong>Mengyang Li</strong>, Zhong Zhang, Pinlong Zhao</div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfa">ICML 2026</span>
-          <span class="venue-tag venue-ccfa">CCF-A</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="data">
-      <div class="pub-num">[4]</div>
-      <div class="pub-content">
-        <div class="pub-title">DABO: Difficulty-aware Bayesian Optimization with Diffusion-learned Priors</div>
-        <div class="pub-authors"><strong>Mengyang Li</strong>, Pinlong Zhao</div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfa">CVPR 2026</span>
-          <span class="venue-tag venue-ccfa">CCF-A</span>
-          <span class="venue-tag venue-highlight">Highlight</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="dpo">
-      <div class="pub-num">[5]</div>
-      <div class="pub-content">
-        <div class="pub-title">What Do LLMs Learn First? Asymmetric Learning Dynamics of Input Complexity and Output Ambiguity in Preference Alignment</div>
-        <div class="pub-authors"><strong>Mengyang Li</strong>, Jingwen Wang, Pinlong Zhao</div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfa">ACL 2026</span>
-          <span class="venue-tag venue-ccfa">CCF-A</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="dpo">
-      <div class="pub-num">[6]</div>
-      <div class="pub-content">
-        <div class="pub-title">Aligner, Diagnose Thyself: A Meta-learning Paradigm for Fusing Intrinsic Feedback in Preference Alignment</div>
-        <div class="pub-authors"><strong>Mengyang Li</strong>, Pinlong Zhao</div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfa">ICLR 2026</span>
-          <span class="venue-tag venue-ccfa">CCF-A</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="data">
-      <div class="pub-num">[7]</div>
-      <div class="pub-content">
-        <div class="pub-title">Difficulty-Aware Learning Curve Extrapolation</div>
-        <div class="pub-authors"><strong>Mengyang Li</strong>, Pinlong Zhao</div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfa">AAAI 2026</span>
-          <span class="venue-tag venue-ccfa">CCF-A</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="data">
-      <div class="pub-num">[8]</div>
-      <div class="pub-content">
-        <div class="pub-title">Delving into the Training Dynamics for Image Classification</div>
-        <div class="pub-authors"><strong>Mengyang Li</strong>, Xiaoling Zhou, Ou Wu</div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfa">IEEE TIP 2025</span>
-          <span class="venue-tag venue-ccfa">CCF-A</span>
-          <span class="venue-tag venue-q1">CAS Q1 TOP · IF 13.7</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="data">
-      <div class="pub-num">[9]</div>
-      <div class="pub-content">
-        <div class="pub-title">Toward Learnable and Interpretable Data Shapley Valuation for Deep Learning</div>
-        <div class="pub-authors"><strong>Mengyang Li</strong>, Weiyao Zhu, Ou Wu</div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfa">KBS 2025</span>
-          <span class="venue-tag venue-q1">CAS Q1 TOP · IF 7.2</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="data">
-      <div class="pub-num">[10]</div>
-      <div class="pub-content">
-        <div class="pub-title">Class-level Logit Perturbation</div>
-        <div class="pub-authors"><strong>Mengyang Li</strong>, Fengguang Su, Ou Wu, Ji Zhang</div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfb">IEEE TNNLS 2024</span>
-          <span class="venue-tag venue-q1">CAS Q1 TOP · IF 8.9</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="data">
-      <div class="pub-num">[11]</div>
-      <div class="pub-content">
-        <div class="pub-title">Logit Perturbation</div>
-        <div class="pub-authors"><strong>Mengyang Li</strong>, Fengguang Su, Ou Wu</div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfa">AAAI 2022</span>
-          <span class="venue-tag venue-ccfa">CCF-A</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="dpo">
-      <div class="pub-num">[12]</div>
-      <div class="pub-content">
-        <div class="pub-title">Learning Temporally-Aware Sample Weights for Preference Optimization</div>
-        <div class="pub-authors"><strong>Mengyang Li</strong>, Xudong Zhou, Pinlong Zhao</div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfa">ACL Findings 2026</span>
-          <span class="venue-tag venue-ccfa">CCF-A</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="imbalance">
-      <div class="pub-num">[13]</div>
-      <div class="pub-content">
-        <div class="pub-title">ECOC-IL: Robust and Efficient Label LDP for Imbalanced Learning</div>
-        <div class="pub-authors"><strong>Mengyang Li</strong>, Ou Wu</div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfa">CVPR Findings 2026</span>
-          <span class="venue-tag venue-ccfa">CCF-A</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="dpo">
-      <div class="pub-num">[14]</div>
-      <div class="pub-content">
-        <div class="pub-title">What Tokens Truly Matter? The Logit Conflation Problem in LLM Sampling</div>
-        <div class="pub-authors">Pinlong Zhao, Huijun Tang, Pengfei Jiao, <strong>Mengyang Li</strong> <em>(corresponding)</em></div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfa">ACL Findings 2026</span>
-          <span class="venue-tag venue-ccfa">CCF-A</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="imbalance">
-      <div class="pub-num">[15]</div>
-      <div class="pub-content">
-        <div class="pub-title">Revisiting the Effective Number Theory for Imbalanced Learning</div>
-        <div class="pub-authors">Ou Wu, <strong>Mengyang Li</strong></div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfa">IEEE TKDE 2024</span>
-          <span class="venue-tag venue-ccfa">CCF-A · IF 8.9</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="imbalance">
-      <div class="pub-num">[16]</div>
-      <div class="pub-content">
-        <div class="pub-title">Unequal Vulnerability: The Differential Impact of Label Flipping Attacks Across Classes</div>
-        <div class="pub-authors">Pinlong Zhao, <strong>Mengyang Li</strong>, Pengfei Jiao, Huijun Tang, Ou Wu</div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfa">WWW 2026</span>
-          <span class="venue-tag venue-ccfa">CCF-A</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="data">
-      <div class="pub-num">[17]</div>
-      <div class="pub-content">
-        <div class="pub-title">Investigating the Sample Weighting Mechanism Using an Interpretable Weighting Framework</div>
-        <div class="pub-authors">Xiaolin Zhou, Ou Wu, <strong>Mengyang Li</strong></div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-ccfa">IEEE TKDE 2023</span>
-          <span class="venue-tag venue-ccfa">CCF-A · IF 8.9</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="data">
-      <div class="pub-num">[18]</div>
-      <div class="pub-content">
-        <div class="pub-title">Two-Level LSTM for Sentiment Analysis With Lexicon Embedding and Polar Flipping</div>
-        <div class="pub-authors">Ou Wu, Tao Yang, <strong>Mengyang Li</strong>, Ming Li</div>
-        <div class="pub-venue">
-          <span class="venue-tag venue-q1">IEEE Trans. Cybernetics 2022</span>
-          <span class="venue-tag venue-q1">CAS Q1 TOP · IF 11.8</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item" data-cat="data">
-      <div class="pub-num">[19]</div>
-      <div class="pub-content">
-        <div class="pub-title">Investigating Annotation Noise for Named Entity Recognition</div>
-        <div class="pub-authors">Yu Zhu, Yingchun Ye, <strong>Mengyang Li</strong>, Ji Zhang, Ou Wu</div>
-        <div class="pub-venue">
-          <span class="venue-year">2023 · IF 6.0</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item pub-nips" data-cat="dpo">
-      <div class="pub-num">[20]</div>
       <div class="pub-content">
         <div class="pub-title">CLUE: Closing the Loop on Conflict and Collapse in LLM Unlearning</div>
         <div class="pub-authors"><strong>Mengyang Li</strong>, Jingwen Wang, Yu Zhang, Pinlong Zhao</div>
@@ -1152,12 +931,13 @@ body.zh .block-en { display: none !important; }
           <span class="venue-tag venue-nips">NeurIPS 2026</span>
           <span class="venue-tag venue-ccfa">CCF-A</span>
           <span class="venue-tag venue-highlight">Poster</span>
+          <span class="venue-tag venue-topic">Unlearning</span>
         </div>
       </div>
     </div>
 
     <div class="pub-item pub-nips" data-cat="data">
-      <div class="pub-num">[21]</div>
+      <div class="pub-num">[2]</div>
       <div class="pub-content">
         <div class="pub-title">Treating Hyperparameters as Interventions: Task-Invariant Representation Learning for Transferable HPO</div>
         <div class="pub-authors"><strong>Mengyang Li</strong>, Ou Wu</div>
@@ -1170,7 +950,7 @@ body.zh .block-en { display: none !important; }
     </div>
 
     <div class="pub-item pub-nips" data-cat="dpo">
-      <div class="pub-num">[22]</div>
+      <div class="pub-num">[3]</div>
       <div class="pub-content">
         <div class="pub-title">META-PAP: Meta-learning for Prompt-aware Preference Pairing in LLM Alignment</div>
         <div class="pub-authors">Pinlong Zhao, Shiyu Hu, Jing Zhang, <strong>Mengyang Li</strong></div>
@@ -1183,7 +963,7 @@ body.zh .block-en { display: none !important; }
     </div>
 
     <div class="pub-item pub-nips" data-cat="data">
-      <div class="pub-num">[23]</div>
+      <div class="pub-num">[4]</div>
       <div class="pub-content">
         <div class="pub-title">Know Your Task, Learn It Right: Task-Aware Optimistic Value Learning for Multi-Task Multi-Agent Reinforcement Learning</div>
         <div class="pub-authors">Chang Liu, <strong>Mengyang Li</strong></div>
@@ -1195,8 +975,8 @@ body.zh .block-en { display: none !important; }
       </div>
     </div>
 
-    <div class="pub-item pub-nips" data-cat="dpo">
-      <div class="pub-num">[24]</div>
+    <div class="pub-item pub-nips" data-cat="unlearning">
+      <div class="pub-num">[5]</div>
       <div class="pub-content">
         <div class="pub-title">KNOT: A Knowledge Entanglement Benchmark for Robust Unlearning Evaluation</div>
         <div class="pub-authors"><strong>Mengyang Li</strong>, Jingwen Wang, Yu Zhang, Shuang Liu, Zhong Zhang</div>
@@ -1204,10 +984,239 @@ body.zh .block-en { display: none !important; }
           <span class="venue-tag venue-nips">NeurIPS 2026 D&amp;B</span>
           <span class="venue-tag venue-ccfa">CCF-A</span>
           <span class="venue-tag venue-highlight">Poster</span>
+          <span class="venue-tag venue-topic">Unlearning</span>
         </div>
       </div>
     </div>
 
+    <div class="pub-item" data-cat="dpo">
+      <div class="pub-num">[6]</div>
+      <div class="pub-content">
+        <div class="pub-title">Dual-Difficulty Curriculum Learning for Direct Preference Optimization</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Haozhan Geng, Zhong Zhang, Shuang Liu</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">KDD 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="dpo">
+      <div class="pub-num">[7]</div>
+      <div class="pub-content">
+        <div class="pub-title">Layer-wise Gradient Disentanglement: Decoupling Semantics and Preferences in Direct Preference Optimization</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Shuang Liu, Zhong Zhang</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">ICML 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="dpo">
+      <div class="pub-num">[8]</div>
+      <div class="pub-content">
+        <div class="pub-title">Task-Aware Preference Calibration for Direct Preference Optimization</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Zhong Zhang, Pinlong Zhao</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">ICML 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[9]</div>
+      <div class="pub-content">
+        <div class="pub-title">DABO: Difficulty-aware Bayesian Optimization with Diffusion-learned Priors</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Pinlong Zhao</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">CVPR 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+          <span class="venue-tag venue-highlight">Highlight</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="dpo">
+      <div class="pub-num">[10]</div>
+      <div class="pub-content">
+        <div class="pub-title">What Do LLMs Learn First? Asymmetric Learning Dynamics of Input Complexity and Output Ambiguity in Preference Alignment</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Jingwen Wang, Pinlong Zhao</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">ACL 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="dpo">
+      <div class="pub-num">[11]</div>
+      <div class="pub-content">
+        <div class="pub-title">Aligner, Diagnose Thyself: A Meta-learning Paradigm for Fusing Intrinsic Feedback in Preference Alignment</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Pinlong Zhao</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">ICLR 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[12]</div>
+      <div class="pub-content">
+        <div class="pub-title">Difficulty-Aware Learning Curve Extrapolation</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Pinlong Zhao</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">AAAI 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[13]</div>
+      <div class="pub-content">
+        <div class="pub-title">Delving into the Training Dynamics for Image Classification</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Xiaoling Zhou, Ou Wu</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">IEEE TIP 2025</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+          <span class="venue-tag venue-q1">CAS Q1 TOP · IF 13.7</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[14]</div>
+      <div class="pub-content">
+        <div class="pub-title">Toward Learnable and Interpretable Data Shapley Valuation for Deep Learning</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Weiyao Zhu, Ou Wu</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">KBS 2025</span>
+          <span class="venue-tag venue-q1">CAS Q1 TOP · IF 7.2</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[15]</div>
+      <div class="pub-content">
+        <div class="pub-title">Class-level Logit Perturbation</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Fengguang Su, Ou Wu, Ji Zhang</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfb">IEEE TNNLS 2024</span>
+          <span class="venue-tag venue-q1">CAS Q1 TOP · IF 8.9</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[16]</div>
+      <div class="pub-content">
+        <div class="pub-title">Logit Perturbation</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Fengguang Su, Ou Wu</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">AAAI 2022</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="dpo">
+      <div class="pub-num">[17]</div>
+      <div class="pub-content">
+        <div class="pub-title">Learning Temporally-Aware Sample Weights for Preference Optimization</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Xudong Zhou, Pinlong Zhao</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">ACL Findings 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="imbalance">
+      <div class="pub-num">[18]</div>
+      <div class="pub-content">
+        <div class="pub-title">ECOC-IL: Robust and Efficient Label LDP for Imbalanced Learning</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Ou Wu</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">CVPR Findings 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="dpo">
+      <div class="pub-num">[19]</div>
+      <div class="pub-content">
+        <div class="pub-title">What Tokens Truly Matter? The Logit Conflation Problem in LLM Sampling</div>
+        <div class="pub-authors">Pinlong Zhao, Huijun Tang, Pengfei Jiao, <strong>Mengyang Li</strong> <em>(corresponding)</em></div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">ACL Findings 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="imbalance">
+      <div class="pub-num">[20]</div>
+      <div class="pub-content">
+        <div class="pub-title">Revisiting the Effective Number Theory for Imbalanced Learning</div>
+        <div class="pub-authors">Ou Wu, <strong>Mengyang Li</strong></div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">IEEE TKDE 2024</span>
+          <span class="venue-tag venue-ccfa">CCF-A · IF 8.9</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="imbalance">
+      <div class="pub-num">[21]</div>
+      <div class="pub-content">
+        <div class="pub-title">Unequal Vulnerability: The Differential Impact of Label Flipping Attacks Across Classes</div>
+        <div class="pub-authors">Pinlong Zhao, <strong>Mengyang Li</strong>, Pengfei Jiao, Huijun Tang, Ou Wu</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">WWW 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[22]</div>
+      <div class="pub-content">
+        <div class="pub-title">Investigating the Sample Weighting Mechanism Using an Interpretable Weighting Framework</div>
+        <div class="pub-authors">Xiaolin Zhou, Ou Wu, <strong>Mengyang Li</strong></div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-ccfa">IEEE TKDE 2023</span>
+          <span class="venue-tag venue-ccfa">CCF-A · IF 8.9</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[23]</div>
+      <div class="pub-content">
+        <div class="pub-title">Two-Level LSTM for Sentiment Analysis With Lexicon Embedding and Polar Flipping</div>
+        <div class="pub-authors">Ou Wu, Tao Yang, <strong>Mengyang Li</strong>, Ming Li</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-q1">IEEE Trans. Cybernetics 2022</span>
+          <span class="venue-tag venue-q1">CAS Q1 TOP · IF 11.8</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item" data-cat="data">
+      <div class="pub-num">[24]</div>
+      <div class="pub-content">
+        <div class="pub-title">Investigating Annotation Noise for Named Entity Recognition</div>
+        <div class="pub-authors">Yu Zhu, Yingchun Ye, <strong>Mengyang Li</strong>, Ji Zhang, Ou Wu</div>
+        <div class="pub-venue">
+          <span class="venue-year">2023 · IF 6.0</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
