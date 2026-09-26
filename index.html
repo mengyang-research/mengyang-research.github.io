@@ -441,6 +441,11 @@ section:first-of-type { padding-top: 8rem; }
   align-items: flex-start;
 }
 
+/* NeurIPS entries get a subtle left accent */
+.pub-item.pub-nips {
+  border-left: 2px solid rgba(168,85,247,0.5);
+}
+
 .pub-item:hover {
   border-color: rgba(79,142,247,0.35);
   transform: translateX(4px);
@@ -501,6 +506,13 @@ section:first-of-type { padding-top: 8rem; }
   background: rgba(6,182,212,0.15);
   color: var(--accent3);
   border: 1px solid rgba(6,182,212,0.3);
+}
+
+/* NeurIPS venue accent — distinguished from other CCF-A venues */
+.venue-nips {
+  background: rgba(168,85,247,0.15);
+  color: #a855f7;
+  border: 1px solid rgba(168,85,247,0.35);
 }
 
 .venue-q1 {
@@ -784,10 +796,10 @@ body.zh .block-en { display: none !important; }
         <span data-zh>天津师范大学 · 电子与通信工程学院</span>
       </div>
       <p class="hero-bio block-en">
-        I received my Ph.D. from Tianjin University (2021–2024) under Prof. Ou Wu, focusing on deep learning and data mining. My current research spans <strong>data optimization</strong>, <strong>preference optimization</strong> (RLHF/DPO for LLMs), and <strong>embodied intelligence</strong>. I have published papers at top venues including KDD, ICML, CVPR, ACL, ICLR, AAAI, IEEE TIP, and TNNLS.
+        I received my Ph.D. from Tianjin University (2021–2024) under Prof. Ou Wu, focusing on deep learning and data mining. My current research spans <strong>data optimization</strong>, <strong>preference optimization</strong> (RLHF/DPO for LLMs), and <strong>embodied intelligence</strong>. I have published papers at top venues including NeurIPS, ICML, ICLR, KDD, CVPR, ACL, AAAI, IEEE TIP, TKDE, and TNNLS.
       </p>
       <p class="hero-bio block-zh">
-        博士毕业于天津大学（2021–2024），师从吴偶教授，研究方向为深度学习与数据挖掘。目前主要从事<strong>数据优化</strong>、<strong>偏好优化</strong>（面向大语言模型的RLHF/DPO）及<strong>具身智能</strong>研究。研究成果发表于KDD、ICML、CVPR、ACL、ICLR、AAAI、IEEE TIP、TNNLS等顶级期刊与会议。
+        博士毕业于天津大学（2021–2024），师从吴偶教授，研究方向为深度学习与数据挖掘。目前主要从事<strong>数据优化</strong>、<strong>偏好优化</strong>（面向大语言模型的RLHF/DPO）及<strong>具身智能</strong>研究。研究成果发表于NeurIPS、ICML、ICLR、KDD、CVPR、ACL、AAAI、IEEE TIP、TKDE、TNNLS等顶级期刊与会议。
       </p>
       <div class="hero-links">
         <a href="mailto:limengyang@tjnu.edu.cn" class="btn btn-primary">
@@ -1127,6 +1139,71 @@ body.zh .block-en { display: none !important; }
         <div class="pub-authors">Yu Zhu, Yingchun Ye, <strong>Mengyang Li</strong>, Ji Zhang, Ou Wu</div>
         <div class="pub-venue">
           <span class="venue-year">2023 · IF 6.0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item pub-nips" data-cat="dpo">
+      <div class="pub-num">[20]</div>
+      <div class="pub-content">
+        <div class="pub-title">CLUE: Closing the Loop on Conflict and Collapse in LLM Unlearning</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Jingwen Wang, Yu Zhang, Pinlong Zhao</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-nips">NeurIPS 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+          <span class="venue-tag venue-highlight">Poster</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item pub-nips" data-cat="data">
+      <div class="pub-num">[21]</div>
+      <div class="pub-content">
+        <div class="pub-title">Treating Hyperparameters as Interventions: Task-Invariant Representation Learning for Transferable HPO</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Ou Wu</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-nips">NeurIPS 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+          <span class="venue-tag venue-highlight">Poster</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item pub-nips" data-cat="dpo">
+      <div class="pub-num">[22]</div>
+      <div class="pub-content">
+        <div class="pub-title">META-PAP: Meta-learning for Prompt-aware Preference Pairing in LLM Alignment</div>
+        <div class="pub-authors">Pinlong Zhao, Shiyu Hu, Jing Zhang, <strong>Mengyang Li</strong></div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-nips">NeurIPS 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+          <span class="venue-tag venue-highlight">Poster</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item pub-nips" data-cat="data">
+      <div class="pub-num">[23]</div>
+      <div class="pub-content">
+        <div class="pub-title">Know Your Task, Learn It Right: Task-Aware Optimistic Value Learning for Multi-Task Multi-Agent Reinforcement Learning</div>
+        <div class="pub-authors">Chang Liu, <strong>Mengyang Li</strong></div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-nips">NeurIPS 2026</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+          <span class="venue-tag venue-highlight">Poster</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item pub-nips" data-cat="dpo">
+      <div class="pub-num">[24]</div>
+      <div class="pub-content">
+        <div class="pub-title">KNOT: A Knowledge Entanglement Benchmark for Robust Unlearning Evaluation</div>
+        <div class="pub-authors"><strong>Mengyang Li</strong>, Jingwen Wang, Yu Zhang, Shuang Liu, Zhong Zhang</div>
+        <div class="pub-venue">
+          <span class="venue-tag venue-nips">NeurIPS 2026 D&amp;B</span>
+          <span class="venue-tag venue-ccfa">CCF-A</span>
+          <span class="venue-tag venue-highlight">Poster</span>
         </div>
       </div>
     </div>
